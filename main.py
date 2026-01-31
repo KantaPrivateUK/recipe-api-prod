@@ -12,7 +12,7 @@ DB_NAME = "recipes.db"
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     return JSONResponse(
-        status_code=400,
+        status_code=200,
         content={"message": "Recipe creation failed!", "detail": str(exc)},
     )
 
